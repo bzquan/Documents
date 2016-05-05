@@ -2,7 +2,7 @@
 
 Using std::istringstream we can easily split a string to a string vector.
 
-    ```cpp  
+``` c++  
     #include <vector>   
     #include <sstream>
 
@@ -16,6 +16,6 @@ Using std::istringstream we can easily split a string to a string vector.
     
         return splitted_str;
     }
-    ```
+ ```
 
 
