@@ -9,4 +9,6 @@ This is my collection of some tips.
 [How to split string](https://github.com/bzquan/Documents/blob/master/CppSplit.md)  
 [How to remove elements from a range collection](https://github.com/bzquan/Documents/blob/master/CppRemoveEraseIdiom.md)
 
+# Qt
+[How to deploy Qt Windows application](https://github.com/bzquan/Documents/blob/master/QtDeploy.md)  
 
