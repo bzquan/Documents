@@ -13,3 +13,5 @@ This is my collection of some tips.
 # Qt
 [How to deploy Qt Windows application](https://github.com/bzquan/Documents/blob/master/QtDeploy.md)  
 
+# Others
+[W3C Color definitions](http://www.w3.org/TR/SVG/types.html#ColorKeywords)  
