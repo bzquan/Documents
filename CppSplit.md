@@ -2,10 +2,11 @@
 
 Using std::istringstream we can easily split a string to a string vector.
 
-    cpp #include <vector>   
+    ```cpp  
+    #include <vector>   
     #include <sstream>
 
-    cpp std::vector<std::string> Split(const std::string &str, char delim)
+    std::vector<std::string> Split(const std::string &str, char delim)
     {
         std::istringstream iss(str);
         std::string tmp;
@@ -15,5 +16,6 @@ Using std::istringstream we can easily split a string to a string vector.
     
         return splitted_str;
     }
+    ```
 
 
