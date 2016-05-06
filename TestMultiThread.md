@@ -1,4 +1,4 @@
-# Synchronizing Multi thread in testing
+# Synchronizing multi-threads in testing
 
 Concurrency is important in modern software development. On the other hand, multi-threaded programming is difficult and it complicates automatic testing. Concurrency and synchronization are system wide concerns. Functionality and concurrency are different concerns for a system.
 
