@@ -56,7 +56,8 @@ __NotificationTrace.h__
     };
  ```
 
-Any event would wake up test program. However test program should wait a specific event otherwise it should enter waiting state again. It is implemented by using wait\_until function of std::condition_variable.  
+Any event would wake up test program. However test program should wait a specific event otherwise it should enter waiting state again. It is implemented by using wait\_until function of std::condition_variable.
+
 __NotificationTrace.cpp__
 
 ``` c++
@@ -108,4 +109,5 @@ A test program requests SUT to do an asynchronous work and wait notification tra
         notification_trace->WaitNotification("a notification msg", 1000ms);
 
         ASSERT_EQ(expected, SUT.GetResult());
+    }  
 ```
