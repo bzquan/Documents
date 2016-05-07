@@ -37,7 +37,7 @@ The difficulty of determining a unit of work is that there is no such kind of pr
  - When a TDD test fails, it should be easier to detect the position of defect from the source code. 
  - When source codes are changed by refactoring, TDD tests should be changed as little as possible, i.e. TDD test  should not depend on application structure as much as possible.
 
-The smaller a unit of work is, the easier position of defect can be detected . The bigger a unit of work is, the less a TDD test depends on application structure. These two aspects is unity of opposites. Like any other scene and engineering, software development has full of contradictions, and permeated with law of "the unity of opposites" for contradiction. And how easy is easy, how little is little, how much is much. We need some trade-off when writing TDD test cases.  
+The smaller a unit of work is, the easier position of defect can be detected . The bigger a unit of work is, the less a TDD test depends on application structure. These two aspects is unity of opposites. Like any other science and engineering, software development has full of contradictions, and permeated with law of "the unity of opposites" for contradiction. And how easy is easy, how little is little, how much is much. We need some trade-off when writing TDD test cases.  
 
 # Survery of some test related techniques
 
