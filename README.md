@@ -1,5 +1,6 @@
-# Some documents
-This is my collection of some tips.
+# Welcome to Quan's software development tips page
+
+Hopes it could give you a little value.
 
 # Test-Driven Development
 [Essence of TDD](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD.md)  
