@@ -2,8 +2,8 @@
 This is my collection of some tips.
 
 # Test-Driven Development
-[Essence of TDD](https://github.com/bzquan/Documents/blob/master/TestTDDWouldDieIf.md)  
-[Synchronizing Multi threads in testing](https://github.com/bzquan/Documents/blob/master/TestEssenceOfTDD.md)  
+[Essence of TDD](https://github.com/bzquan/Documents/blob/master/TestEssenceOfTDD.md)  
+[Synchronizing Multi threads in testing](https://github.com/bzquan/Documents/blob/master/TestMultiThread.md)  
 
 # C++
 [How to split string](https://github.com/bzquan/Documents/blob/master/CppSplit.md)  
