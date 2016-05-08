@@ -22,7 +22,7 @@ TDD is a kind of rule for software development. _If you are a genius, you don’
 
 This argument comes from [What Is Software Design? By Jack W. Reeves](http://www.developerdotstar.com/mag/articles/PDF/DevDotStar_Reeves_CodeAsDesign.pdf). A specification says what to do, a design document says how to do it.  Design document needs some tools to be described, e.g. UML diagrams, block diagrams, natural languages, programming languages. When the document is detailed enough, complete enough, and unambiguous enough that it can be interpreted mechanistically, whether by a computer or by an assembly line worker, then you have a design document. What tools to be use in design document doesn't matter, these are all communication tools. However, we need several level of abstractions to describe design, e.g. architectures(top level design), internal building blocks(class design), and implementations(low level design), in order to communicate better among designers. 
 
-Designing is a process, it has not been completed until you have written and tested the code. The only way we validate a software design is by building it and testing it. There is no silver bullet, and no “right way” to do design. 
+Designing is a process, we need many creative works in implementation and refactoring after detailed design, it has not been completed until you have written and tested the code. The only way we validate a software design is by building it and testing it. There is no silver bullet, and no “right way” to do design. 
 
 # Indivisuals are more important
 

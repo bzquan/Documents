@@ -3,8 +3,8 @@
 Hopes it could give you a little value.
 
 # Test-Driven Development
-[Essence of TDD](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD.md)  
-[TDD的本质](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD_zh.md)    
+[Essence of TDD](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD.md) 
+[-中文-](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD_zh.md)    
 [Synchronizing Multi threads in testing](https://github.com/bzquan/Documents/blob/master/Documents/TestMultiThread.md)  
 
 # C++
