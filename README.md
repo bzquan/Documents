@@ -6,6 +6,8 @@ Hopes it could give you a little value.
 [Essence of TDD](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD.md) 
 [-中文-](https://github.com/bzquan/Documents/blob/master/Documents/TestEssenceOfTDD_zh.md)    
 [Synchronizing Multi threads in testing](https://github.com/bzquan/Documents/blob/master/Documents/TestMultiThread.md)  
+[A simple example of BDD by Cucumber/C++](https://github.com/bzquan/CucumberCpp/blob/master/Example/SimpleStringCalculator.md)  
+[How to use Google Mock in BDD](https://github.com/bzquan/CucumberCpp/blob/master/Example/SimpleStringCalculatorMock.md)  
 
 # C++
 [How to split string](https://github.com/bzquan/Documents/blob/master/Documents/CppSplit.md)  
