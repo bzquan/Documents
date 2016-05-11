@@ -54,6 +54,8 @@ Kata(形)とは、TDD開発手法にて練習問題を繰り返して解くこ�
 
 これで、初期状態ケースが成功します。 続けて、数字一つのケースを作成します。
 
+``` c++ 
+
     TEST_F(StringCalculatorTest, 数字一個)
     {
         // Given
@@ -65,6 +67,7 @@ Kata(形)とは、TDD開発手法にて練習問題を繰り返して解くこ�
         // Then
         ASSERT_EQ(18, 合計結果);
     }
+```
 
 StringCalculatorにInput関数を追加します。
 
@@ -94,6 +97,8 @@ StringCalculatorにInput関数を追加します。
 
 これで、「数字一個」ケースも成功します。 続けて、区切り文字が「+」場合に対応します。
 
+``` c++ 
+
     TEST_F(StringCalculatorTest, 区切り文字がプラス記号)
     {
         // Given
@@ -105,6 +110,7 @@ StringCalculatorにInput関数を追加します。
         // Then
         ASSERT_EQ(6, 合計結果);
     }
+```
 
 まだ未実装なので、このケースは失敗するはずです。この問題を解決するためには、
 
