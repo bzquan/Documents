@@ -200,4 +200,4 @@ StringCalculatorにInput関数を追加します。
     }
 ```
 
-続く
+続く => BDD
