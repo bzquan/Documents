@@ -200,4 +200,4 @@ StringCalculatorにInput関数を追加します。
     }
 ```
 
-続く => BDD
+続く => [BDD](https://github.com/bzquan/Documents/blob/master/Documents/StringCalculatorKata2_jp.md)
