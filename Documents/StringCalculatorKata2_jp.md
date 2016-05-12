@@ -163,11 +163,6 @@ BDDの上記コードは、[TestCaseModel](https://github.com/bzquan/CucumberCpp
         return sum;
     }
 
-    void StringCalculator::InformResult(int sum)
-    {
-        if (m_pDisplay != nullptr) m_pDisplay->Sum(sum);
-    }
-
     char StringCalculator::GetSeparator(const std::string& input)
     {
         if (IsSeprator(input, '+'))
@@ -226,4 +221,4 @@ BDDの上記コードは、[TestCaseModel](https://github.com/bzquan/CucumberCpp
     }
 ```
 
-続く => Google Mockの使用
+続く => [Google Mockの使用](https://github.com/bzquan/Documents/blob/master/Documents/StringCalculatorKata3_jp.md)
