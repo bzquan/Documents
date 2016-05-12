@@ -73,7 +73,7 @@
     };
 ```
 
-まずは、文字列電卓_StepsのStep関数を下記のように実装します。
+BDDの上記コードは、[TestCaseModel](https://github.com/bzquan/CucumberCpp/tree/master/Example/SimpleStringCalculator/src/TestCaseModel)ライブラリを使用するので、プロジェクトにTestCaseModelコードを追加する必要があります。まずは、文字列電卓_StepsのStep関数を下記のように実装します。
 
 ``` c++ 
 
@@ -100,7 +100,7 @@
 
 ``` c++ 
 
-    void 文字列電卓_TestModel::Input(string input)
+    void 文字列電卓_TestModel::Input(std::string input)
     {
         m_Calculator.Input(input);
     }
@@ -117,20 +117,58 @@
 
 ```
 
-これで、シナリオの実装が完了しました。次からは、試験ケースを一件ずつ成功させるため、StringCalculatorをこまめに実装しながら、リファクタリング(Refactoring)を行い、コードをきれいにします。完成後のコードは下記のようです。
+これで、シナリオの実装が完了しました。今までの開発により、「1 + 2 + 3」ケースまで成功しました。ところが、「4, 5, 6」と「7; 8; 9」ケースはまだ成功できていません。その理由は、CalculateSum()関数で区切り文字を「+」に固定したためでした。 「4, 5, 6」と「7; 8; 9」ケースを成功させるため、入力された文字列に使用された区切り文字を見つける関数GetSeparatorを作成します。
+
+``` c++ 
+
+    char StringCalculator::GetSeparator(const std::string& input)
+    {
+        if (IsSeprator(input, '+'))
+            return '+';
+        else if (IsSeprator(input, ','))
+            return ',';
+        else if (IsSeprator(input, ';'))
+            return ';';
+        else
+            return '\0';
+    }
+``` 
+
+従いまして、CalculateSum関数も改修します。これで、最後の二項目以外、すべての試験項目が成功します。
+
+``` c++
+ 
+    int StringCalculator::CalculateSum()
+    {
+        char delim = GetSeparator(m_inputString);
+        std::vector<std::string> nums = Split(m_inputString, delim);
+        int sum = CalculateSum(nums);
+
+        return sum;
+    }
+``` 
+
+最後の二項目が失敗した理由は、std::stoiの引数に数字文字列として渡された文字列には、実は数字以外の文字列が含まれたため、std::stoiから例外が発生しました。「1, 2; 3」の場合、「,」が区切り文字として判定されたので、「2; 3」が一つの数字文字列になりました。「a1 + a2 + a3」の場合は、区切り文字が「+」でありましたので、a1、a2、a3が数字文字列として、std::stoi関数に渡されました。
+
+この問題を解決するため、std::stoiを使用する前に、引数が数字またはスペースかをチェックするように改修しましょう。完成後のコードは下記のようです。
 
 ``` c++ 
 
     int StringCalculator::CalculateSum()
     {
         char delim = GetSeparator(m_inputString);
-        vector<string> nums = Split(m_inputString, delim);
+        std::vector<std::string> nums = Split(m_inputString, delim);
         int sum = CalculateSum(nums);
 
         return sum;
     }
 
-    char StringCalculator::GetSeparator(const string& input)
+    void StringCalculator::InformResult(int sum)
+    {
+        if (m_pDisplay != nullptr) m_pDisplay->Sum(sum);
+    }
+
+    char StringCalculator::GetSeparator(const std::string& input)
     {
         if (IsSeprator(input, '+'))
             return '+';
@@ -144,19 +182,19 @@
 
     std::vector<std::string> StringCalculator::Split(const std::string &str, char delim)
     {
-        std::istringstream iss(str);
+        std::stringstream iss(str);
         std::string tmp;
-        std::vector<string> splitted_str;
+        std::vector<std::string> splitted_str;
         while (getline(iss, tmp, delim))
             splitted_str.push_back(tmp);
     
         return splitted_str;
     }
 
-    int StringCalculator::CalculateSum(vector<string>& nums)
+    int StringCalculator::CalculateSum(std::vector<std::string>& nums)
     {
         int sum = 0;
-        for (string& str : nums)
+        for (std::string& str : nums)
         {
             if (IsAllDigit(str))
                 sum += std::stoi(str);
@@ -170,12 +208,12 @@
         return sum;
     }
 
-    bool StringCalculator::IsSeprator(const string& input, char ch)
+    bool StringCalculator::IsSeprator(const std::string& input, char ch)
     {
-        return string::npos != input.find(ch);
+        return std::string::npos != input.find(ch);
     }
 
-    bool StringCalculator::IsAllDigit(const string& str)
+    bool StringCalculator::IsAllDigit(const std::string& str)
     {
         if (str.length() == 0) return false;
         for (char ch : str)

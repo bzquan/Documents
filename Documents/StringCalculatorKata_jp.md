@@ -77,7 +77,7 @@ StringCalculatorにInput関数を追加します。
     {
     public:
         int CalculateSum() { return 0; }
-        void Input(const string input) { m_inputString = input; }
+        void Input(const std::string input) { m_inputString = input; }
 
     private:
         string  m_inputString;
@@ -151,7 +151,7 @@ StringCalculatorにInput関数を追加します。
 
             // 合計
             int sum = 0;
-            for (string& str : splitted_str)
+            for (std::string& str : splitted_str)
             {
                 sum += std::stoi(str);
             }
@@ -172,11 +172,11 @@ StringCalculatorにInput関数を追加します。
         else
         {
            // 文字列の分解
-           vector<string> splitted_str = Split(m_inputString, '+');
+           std::vector<std::string> splitted_str = Split(m_inputString, '+');
 
            // 合計
            int sum = 0;
-           for (string& str : splitted_str)
+           for (std::string& str : splitted_str)
            {
                sum += std::stoi(str);
            }
@@ -189,7 +189,7 @@ StringCalculatorにInput関数を追加します。
     {
         std::istringstream iss(str);
         std::string tmp;
-        std::vector<string> splitted_str;
+        std::vector<std::string> splitted_str;
         while (getline(iss, tmp, delim))
             splitted_str.push_back(tmp);
     
@@ -201,10 +201,10 @@ StringCalculatorにInput関数を追加します。
 
 ``` c++ 
 
-    int StringCalculator::CalculateSum(vector<string>& nums)
+    int StringCalculator::CalculateSum(std::vector<std::string>& nums)
     {
         int sum = 0;
-        for (string& str : nums)
+        for (std::string& str : nums)
         {
             sum += std::stoi(str);
         }
@@ -223,7 +223,7 @@ StringCalculatorにInput関数を追加します。
            return 0;
         else
         {
-           vector<string> splitted_str = Split(m_inputString, '+');
+           std::vector<std::string> splitted_str = Split(m_inputString, '+');
            return CalculateSum(splitted_str);
         }
     }
@@ -235,7 +235,7 @@ StringCalculatorにInput関数を追加します。
 
     int StringCalculator::CalculateSum()
     {
-        vector<string> splitted_str = Split(m_inputString, '+');
+        std::vector<std::string> splitted_str = Split(m_inputString, '+');
         return CalculateSum(splitted_str);
     }
 ```
