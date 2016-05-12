@@ -138,21 +138,26 @@ StringCalculatorにInput関数を追加します。
 
     int StringCalculator::CalculateSum()
     {
-        // 文字列の分解
-        std::istringstream iss(str);
-        std::string tmp;
-        std::vector<string> splitted_str;
-        while (getline(iss, tmp, '+'))
-            splitted_str.push_back(tmp);
-
-        // 合計
-        int sum = 0;
-        for (string& str : splitted_str)
+        if (m_inputString.empty())
+           return 0;
+        else
         {
-            sum += std::stoi(str);
-        }
+            // 文字列の分解
+            std::istringstream iss(str);
+            std::string tmp;
+            std::vector<string> splitted_str;
+            while (getline(iss, tmp, '+'))
+                splitted_str.push_back(tmp);
 
-        return sum;
+            // 合計
+            int sum = 0;
+            for (string& str : splitted_str)
+            {
+                sum += std::stoi(str);
+            }
+
+            return sum;
+        }
     }
 
 ```
@@ -162,17 +167,22 @@ StringCalculatorにInput関数を追加します。
 
     int StringCalculator::CalculateSum()
     {
-        // 文字列の分解
-        vector<string> splitted_str = Split(m_inputString, '+');
-
-        // 合計
-        int sum = 0;
-        for (string& str : splitted_str)
+        if (m_inputString.empty())
+           return 0;
+        else
         {
-            sum += std::stoi(str);
-        }
+           // 文字列の分解
+           vector<string> splitted_str = Split(m_inputString, '+');
 
-        return sum;
+           // 合計
+           int sum = 0;
+           for (string& str : splitted_str)
+           {
+               sum += std::stoi(str);
+           }
+
+           return sum;
+        }
     }
 
     std::vector<std::string> StringCalculator::Split(const std::string &str, char delim)
@@ -204,6 +214,22 @@ StringCalculatorにInput関数を追加します。
 ```
 
 このリファクタリングにより、StringCalculator::CalculateSum()が下記のようになる。
+
+``` c++ 
+
+    int StringCalculator::CalculateSum()
+    {
+        if (m_inputString.empty())
+           return 0;
+        else
+        {
+           vector<string> splitted_str = Split(m_inputString, '+');
+           return CalculateSum(splitted_str);
+        }
+    }
+```
+
+実は、StringCalculator::CalculateSum(vector<string>& nums)は既に空文字列のケースにも対応している。なので、if (m_inputString.empty())は余分な処理になっている。再度リファクタリングを実施して、余分なコードを削除する。
 
 ``` c++ 
 
