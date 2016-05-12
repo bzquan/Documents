@@ -90,7 +90,21 @@ StringCalculatorにInput関数を追加します。
 
     int StringCalculator::CalculateSum()
     {
-        return std::stoi(str);
+        return std::stoi(m_inputString);
+    }
+
+```
+
+これで、「数字一個」ケースは成功するが、「初期状態」は失敗します。問題原因はstd::stoiは空文字の場合、例外を発生させるためです。改修後のコードは下記です。
+
+``` c++ 
+
+    int StringCalculator::CalculateSum()
+    {
+        if (m_inputString.empty())
+           return 0;
+        else
+           return std::stoi(m_inputString);
     }
 
 ```
