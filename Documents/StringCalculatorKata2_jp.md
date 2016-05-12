@@ -1,13 +1,13 @@
 # 文字列電卓形(String Calculator Kata) - BDD
-本節では、BDD(Behavior Driven Development)にて、文字列電卓のプログラム作成します。 文字列電卓機能としては、区切り文字で区切られた数値の合計を計算します。 下記のGherkin記述手法にて仕様を記述します。
+本節では、BDD(Behavior Driven Development)にて、文字列電卓のプログラム作成します。 文字列電卓機能としては、区切り文字で区切られた数値の合計を計算します。 Gherkin記述手法にて仕様を記述します。この仕様は、[文字列電卓形](https://github.com/bzquan/Documents/blob/master/Documents/StringCalculatorKata_jp.md)での仕様と同じです。
 
 ``` c++ 
 
     Feature: 文字列電卓
-     使用者として、区切り文字で区切られた数字について、その数字の合計がほしい。
+    使用者として、区切り文字で区切られた数字について、その数字の合計がほしい。
 
     Scenario Outline: 数字文字列の合計  
-     区切り文字としては、「+」、「,」または「;」が可能である。但し、異なる区切り文字の混在は不可である。
+    区切り文字としては、「+」、「,」または「;」が可能である。但し、異なる区切り文字の混在は不可である。
 
     Given <数字文字列>がある
     When 数字を合計する
@@ -24,7 +24,9 @@
      |a1 + a2 + a3|0  |
 ```
 
-Cucumber/C++にて実行可能な仕様を生成すると、下記コードが生成されます。
+[Cucumber/C++](https://github.com/bzquan/CucumberCpp)にて実行可能な仕様を生成すると、下記コードが生成されます。
+
+![Feature](https://github.com/bzquan/Documents/blob/master/Images/StringCalculator_feature.jpg)
 
 ``` c++ 
 
@@ -94,7 +96,7 @@ Cucumber/C++にて実行可能な仕様を生成すると、下記コードが�
     }
 ```
 
-次に、文字列電卓_TestModelクラスを実装します。
+次は、文字列電卓_TestModelクラスを実装します。
 
 ``` c++ 
 
@@ -115,7 +117,7 @@ Cucumber/C++にて実行可能な仕様を生成すると、下記コードが�
 
 ```
 
-これで、シナリオの実装が完了し、次は試験ケースを一件ずつ成功させるため、StringCalculatorをこまめに実装しながら、リファクタリング(Refactoring)を行い、コードをきれいにします。完成後のコードは下記のようです。
+これで、シナリオの実装が完了しました。次からは、試験ケースを一件ずつ成功させるため、StringCalculatorをこまめに実装しながら、リファクタリング(Refactoring)を行い、コードをきれいにします。完成後のコードは下記のようです。
 
 ``` c++ 
 

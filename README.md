@@ -8,6 +8,9 @@ Hopes it could give you a little value.
 [Synchronizing Multi threads in testing](https://github.com/bzquan/Documents/blob/master/Documents/TestMultiThread.md)  
 [A simple example of BDD by Cucumber/C++](https://github.com/bzquan/CucumberCpp/blob/master/Example/SimpleStringCalculator.md)  
 [How to use Google Mock in BDD](https://github.com/bzquan/CucumberCpp/blob/master/Example/SimpleStringCalculatorMock.md)  
+[文字列電卓形 - TDD](https://github.com/bzquan/Documents/blob/master/Documents/StringCalculatorKata_jp.md)  
+[文字列電卓形 - BDD](https://github.com/bzquan/Documents/blob/master/Documents/StringCalculatorKata2_jp.md)
+
 
 # C++
 [How to split string](https://github.com/bzquan/Documents/blob/master/Documents/CppSplit.md)  
