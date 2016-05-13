@@ -246,4 +246,6 @@ Modelの実装は下記のようです。
     }
 ```
 
+[サンプルコードはここから](https://github.com/bzquan/CucumberCpp/tree/master/Example/SimpleStringCalculatoMock)
+
 おわり
