@@ -192,14 +192,12 @@ Modelの実装は下記のようです。
     private:
         MockDisplay      m_MockDisplay;
         StringCalculator m_Calculator;
-        int m_ExpectedSum;
-        int m_ActualSum;
     };
 
     void 文字列電卓Mock_TestModel::Input(string input)
     {
         m_Calculator.Input(input);
-        m_ActualSum = m_Calculator.CalculateSum();  // 文字入力時、合計処理も行います
+        m_Calculator.CalculateSum();  // 文字入力時、合計処理も行います
     }
 
     void 文字列電卓Mock_TestModel::ExpectedSum(int sum)
@@ -209,7 +207,11 @@ Modelの実装は下記のようです。
 
 ```
 
-残念ながら、上記の実装では文字列電卓Mock関連の試験項目がすべて失敗します。その理由は、m_MockDisplay.ExpectSum(sum)がm_Calculator.Inputとm_ActualSum = m_Calculator.CalculateSum()が実行された後、最後に実行されるので、MockオブジェクトへのEXPECT_CALL(*this, Sum(sum))の期待動作が満たされていません。この処理順序の問題解決のため、Gherkin featureを下記に改定します。ここで、Then文に[[mock]]属性を追加しました。このmock属性により、「Then <合計>が通知されること[[mock]]」が先に実行されるので、すべての試験ケースが成功になります。
+残念ながら、上記の実装では文字列電卓Mock関連の試験項目がすべて失敗します。その理由は、m_MockDisplay.ExpectSum(sum)がm_Calculator.CalculateSum()が実行された後、最後に実行されるので、MockオブジェクトへのEXPECT_CALL(*this, Sum(sum))の期待動作が満たされていません。失敗時の処理シーケンスは下記のようです。
+
+![失敗時の処理シーケンス](https://github.com/bzquan/Documents/blob/master/Images/StringCalculatorCallSequence_fail.jpg)
+
+この処理順序の問題解決のため、Gherkin featureを下記に改定します。ここで、Then文に[[mock]]属性を追加しました。このmock属性により、「Then <合計>が通知されること[[mock]]」が先に実行されるので、すべての試験ケースが成功になります。
 
 ``` c++ 
 
@@ -232,6 +234,10 @@ Modelの実装は下記のようです。
      |1, 2; 3     |0  |
      |a1 + a2 + a3|0  |
 ```
+
+成功時の処理シーケンスは下記のようです。
+
+![成功時の処理シーケンス](https://github.com/bzquan/Documents/blob/master/Images/StringCalculatorCallSequence_success.jpg)
 
 補足ですが、Stepの関数名が下記のように変更されましたので、Stepコードの変更も必要です。
 
