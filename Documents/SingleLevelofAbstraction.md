@@ -1,6 +1,6 @@
 # Small function - how small is small?
 
-Small functions are considered to be more readable in general. How small is small for a function or method? First of all a function should do only one thing. The main principle to keep a function to do one thing is so called [Single Level of Abstraction Principle](http://principles-wiki.net/principles:single_level_of_abstraction).
+Small functions are considered to be more readable in general. How small is small for a function or method? First of all a function should do only one thing. Some propose that a function should be within 5 - 15 statements, or less than 30 statements. However these are not answer of why. The main principle to keep a function to do one thing is so called [Single Level of Abstraction Principle](http://principles-wiki.net/principles:single_level_of_abstraction).
 
 __Principle Statement__  
 - Each function should be written in terms of a single level of abstraction. -From principles-wiki.net  
