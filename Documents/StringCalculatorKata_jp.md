@@ -143,7 +143,7 @@ StringCalculatorにInput関数を追加します。
         else
         {
             // 文字列の分解
-            std::istringstream iss(str);
+            std::istringstream iss(m_inputString);
             std::string tmp;
             std::vector<string> splitted_str;
             while (getline(iss, tmp, '+'))
@@ -151,9 +151,9 @@ StringCalculatorにInput関数を追加します。
 
             // 合計
             int sum = 0;
-            for (std::string& str : splitted_str)
+            for (std::string& str_num : splitted_str)
             {
-                sum += std::stoi(str);
+                sum += std::stoi(str_num);
             }
 
             return sum;
@@ -176,9 +176,9 @@ StringCalculatorにInput関数を追加します。
 
            // 合計
            int sum = 0;
-           for (std::string& str : splitted_str)
+           for (std::string& str_num : splitted_str)
            {
-               sum += std::stoi(str);
+               sum += std::stoi(str_num);
            }
 
            return sum;
@@ -204,9 +204,9 @@ StringCalculatorにInput関数を追加します。
     int StringCalculator::CalculateSum(std::vector<std::string>& nums)
     {
         int sum = 0;
-        for (std::string& str : nums)
+        for (std::string& str_num : nums)
         {
-            sum += std::stoi(str);
+            sum += std::stoi(str_num);
         }
 
         return sum;
