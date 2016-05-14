@@ -20,9 +20,13 @@ TDD is a kind of rule for software development. _If you are a genius, you don’
 
 # Source code is design
 
-This argument comes from [What Is Software Design? By Jack W. Reeves](http://www.developerdotstar.com/mag/articles/PDF/DevDotStar_Reeves_CodeAsDesign.pdf). A specification says what to do, a design document says how to do it.  Design document needs some tools to be described, e.g. UML diagrams, block diagrams, natural languages, programming languages. When the document is detailed enough, complete enough, and unambiguous enough that it can be interpreted mechanistically, whether by a computer or by an assembly line worker, then you have a design document. What tools to be use in design document doesn't matter, these are all communication tools. However, we need several level of abstractions to describe design, e.g. architectures(top level design), internal building blocks(class design), and implementations(low level design), in order to communicate better among designers. 
+This argument comes from [What Is Software Design? By Jack W. Reeves](http://www.developerdotstar.com/mag/articles/PDF/DevDotStar_Reeves_CodeAsDesign.pdf). A specification says what to do, a design document says how to do it.  Design document needs some tools to be described, e.g. UML diagrams, block diagrams, natural languages, programming languages. When the document is detailed enough, complete enough, and unambiguous enough that it can be interpreted mechanistically, whether by a computer or by an assembly line worker, then you have a design document. What tools to be use in design document doesn't matter, these are all communication tools. In this sense __source code is final detailed design.__ However, we need several level of abstractions to describe design, e.g. architectures(top level design), internal building blocks(class design), and implementations(low level design), in order to communicate better among designers. 
 
 Designing is a process, we need many creative works in implementation and refactoring after detailed design, it has not been completed until you have written and tested the code. The only way we validate a software design is by building it and testing it. There is no silver bullet, and no “right way” to do design. 
+
+# Source code is not the whole story
+
+We need design document, which is more abstract than source code, to show overall structure of the system, dynamic interactions between components before writing program. Architecture design is more or less a kind of design specification. However internal building blocks design document(detailed design) is not always design specification but it is a kind of thinking and communication tool. This kind of document could be __informal__ at the beginning, and it shall be evolved. It means that the role of detailed design is a guidline for writing source code when implementing. After completion of implementation, the role of detailed design document is an assistant material for maintainers to understand source code. Although source code could be considered final design document, but we need various assisting document for developers to understand source code because the abstraction level of source code in current programming languages is still low. Abstraction is one of the most effect tool for tackling complex problems. We need higher level of documents to describe source code for understaning it more effectively. 
 
 # Indivisuals are more important
 
@@ -30,14 +34,20 @@ TDD is a kind of design process. A process, which gives steps how to work, is im
 
 # What is unit?
 
-When talking about unit, the main confusion comes from the understanding of TDD and unit test. A test case in TDD (Let's say it TDD test from here on) to express the application functionality that needs to be implemented. A TDD test matters behavior, a unit test case matters code structure. TDD is used to develop a unit of work in every red-green-refactoring cycle. On the other hand, unit test is used to find bugs in a basic unit of source code, which is a class in object-oriented applications. TDD is all about development of software, unit test is all about finding bugs. 
+When talking about unit, the main confusion comes from the understanding of TDD and unit test. A test case in TDD (Let's say it TDD test from here on) to express the application functionality that needs to be implemented. A TDD test matters behavior, a unit test case matters code structure. TDD is used to develop a __unit of work__ in every red-green-refactoring cycle. On the other hand, unit test is used to find bugs in a basic unit of source code, which is a class in object-oriented applications. TDD is all about development of software, unit test is all about finding bugs. 
 
-The difficulty of determining a unit of work is that there is no such kind of precise definition like a class. A TDD test can deal with as little as a function or as much as several classes. A unit of work can be determine by considering following aspects.
+The difficulty of determining a unit of work is that there is no such kind of precise definition like a class. A TDD test can deal with as little as a function or as much as several classes. A unit of work can be determined by considering following aspects.
 
  - When a TDD test fails, it should be easier to detect the position of defect from the source code. 
  - When source codes are changed by refactoring, TDD tests should be changed as little as possible, i.e. TDD test  should not depend on application structure as much as possible.
 
 The smaller a unit of work is, the easier position of defect can be detected . The bigger a unit of work is, the less a TDD test depends on application structure. These two aspects is unity of opposites. Like any other science and engineering, software development has full of contradictions, and permeated with law of "the unity of opposites" for contradiction. And how easy is easy, how little is little, how much is much. We need some trade-off when writing TDD test cases.  
+
+# TDD and BDD are the same
+
+Both TDD and BDD(_Behavior Driven Development_) are the same as a development method, in which behavior of __unit of work__ shall be described before implementing it, and the source code shall be refactored after imlementing the behavior. Both are behavior driven development in essence. In a broad sense, BDD is another vocabulariy of TDD. Both TDD and BDD have absolutely nothing to do with testing. Tests are merely by-product in this development method. However the word of __unit test__ in TDD misleads too many developers to write test cases which focus on __how__ a function/method or class does work. It would end up with very brittle tests that do nothing more than confirm that the program unit does what it does, and test cases would have to be refactored with the refactoring of codes because these test cases are tightly coupled with the structure of program.
+
+In practice, however, BDD usually uses higher level language, for example Gherkin, to describe behavior. TDD uses xUnit framework in which the same programming language as in development is used. 
 
 # Survery of some test related techniques
 
