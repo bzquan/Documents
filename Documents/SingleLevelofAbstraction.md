@@ -10,7 +10,37 @@ __Description__
 
 All statements of a function should belong to the same level of abstraction. If there is a statement which belongs to a lower level of abstraction, it should go to a private function which comprises statements on this level. Doing so will result in smaller functions.
 
-__Example__
+
+__Example1__
+
+``` c++ 
+
+    void compute()
+    {
+        input();
+        flags |= 0x0080;
+        output();
+    }
+```
+
+The statement "flags |= 0x0080" is not in the same level of abstraction. It shall be refactored to a function.
+
+``` c++ 
+
+    void compute()
+    {
+        input();
+        setFlag();
+        output();
+    }
+
+    void setFlag()
+    {
+        flags |= 0x0080;
+    }
+```
+
+__Example2__
 
 CalculateSum function sums numbers which are separated by '+' in a string, e.g. the result of "1 + 2 + 3" is 6.
 
@@ -74,4 +104,3 @@ It shall be refactored as following.
         return sum;
     }
 ```
-
