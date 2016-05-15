@@ -24,8 +24,8 @@ Hopes it could give you a little value.
 [How to deploy Qt Windows application](https://github.com/bzquan/Documents/blob/master/Documents/QtDeploy.md)  
 
 # Others
-[Object-oriented design principles](http://principles-wiki.net/principles:start)  
+[Object-oriented design principles from Principle wiki](http://principles-wiki.net/principles:start)  
 [Markdown help from stackoverflow](http://stackoverflow.com/editing-help)  
-[How to add image](https://github.com/bzquan/Documents/blob/master/Documents/MarkdownHowToAddImage.md)  
-[How to add table](https://github.com/bzquan/Documents/blob/master/Documents/MarkdownTable.md)
+[How to add an image for markdown](https://github.com/bzquan/Documents/blob/master/Documents/MarkdownHowToAddImage.md)  
+[How to add table for markdown](https://github.com/bzquan/Documents/blob/master/Documents/MarkdownTable.md)  
 [W3C Color definitions](http://www.w3.org/TR/SVG/types.html#ColorKeywords)  
