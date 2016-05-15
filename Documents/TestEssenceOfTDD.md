@@ -47,7 +47,7 @@ The smaller a unit of work is, the easier position of defect can be detected . T
 
 Both TDD and BDD(_Behavior Driven Development_) are the same as a development method, in which behavior of __unit of work__ shall be described before implementing it, and the source code shall be refactored after imlementing the behavior. Both are behavior driven development in essence. In a broad sense, BDD is another vocabulariy of TDD. Both TDD and BDD have absolutely nothing to do with testing. Tests are merely by-product in this development method. However the word of __unit test__ in TDD misleads too many developers to write test cases which focus on __how__ a function/method or class does work. It would end up with very brittle tests that do nothing more than confirm that the program unit does what it does, and test cases would have to be refactored with the refactoring of codes because these test cases are tightly coupled with the structure of program.
 
-In practice, however, BDD usually uses higher level language, for example Gherkin, to describe behavior. TDD uses xUnit framework in which the same programming language as in development is used. 
+In practice, however, BDD is applied to bigger granularity of unit work; TDD applied to smaller granularity of unit work. BDD usually uses higher level language, for example Gherkin, to describe behavior; TDD uses xUnit framework in which the same programming language as in development is used. 
 
 # Survery of some test related techniques
 
